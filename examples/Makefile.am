@@ -21,7 +21,10 @@ AM_CPPFLAGS = \
 
 LDADD = \
 	../gdk/$(gdkglext_targetlib)	\
-	../gtk/$(gtkglext_targetlib)
+	../gtk/$(gtkglext_targetlib)	\
+	$(MATH_LIB)	\
+	$(GLU_LIBS)	\
+	$(GL_LIBS)
 
 AM_LDFLAGS = \
 	$(GTK_LIBS)		\
@@ -82,6 +85,7 @@ endif
 noinst_PROGRAMS += logo
 logo_SOURCES = trackball.h trackball.c logo-model.h logo-model.c logo.c
 logo_SOURCES += logo-g.h logo-t.h logo-k.h
+logo_LDADD = $(LDADD) libdrawshapes.la
 
 noinst_PROGRAMS += gears
 gears_SOURCES = gears.c
