@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	./bootstrap
+	dh_auto_configure -- --enable-gtk-doc --enable-gtk-doc-html
+
+override_dh_install:
+	dh_install
+	sed -i "/dependency_libs/ s/'.*'/''/" debian/libgtkglext-3-dev/usr/lib/libgdkglext-3.0.la
+	sed -i "/dependency_libs/ s/'.*'/''/" debian/libgtkglext-3-dev/usr/lib/libgtkglext-3.0.la
+
+override_dh_strip:
+	dh_strip --dbg-package=libgtkglext-3-0-dbg
+

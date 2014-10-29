@@ -1,0 +1,6 @@
+examples/*.c
+examples/*.h
+examples/*.rgb
+examples/*.lwo
+examples/Makefile.am
+examples/*.py
