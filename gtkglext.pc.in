@@ -6,10 +6,8 @@ includedir=@includedir@
 targets=@GDKGLEXT_BACKENDS@
 api_version=@GTKGLEXT_API_VERSION@
 
-multihead=@GDKGLEXT_MULTIHEAD_SUPPORT@
-
-Name: GtkGLExt
-Description: OpenGL Extension to GTK+
+Name: GtkGLExt-3
+Description: OpenGL Extension to GTK+ 3
 Version: @VERSION@
 Requires: gtk+-3.0 gdkglext-${api_version}
 Libs: -L${libdir} -lgtkglext-${api_version}
